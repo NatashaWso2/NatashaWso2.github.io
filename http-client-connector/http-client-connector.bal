@@ -35,10 +35,11 @@ function main (string[] args) {
     println("\nDELETE request:");
     println(resp.getJsonPayload());
     req.setStringPayload("CUSTOM: Hello World");
-    //The execute() action can be used if one needs to use custom HTTP verbs.
+    //The execute() action can be used if one needs to use custom HTTP
+    //verbs.
     resp, _ = httpConnector.execute("COPY", "/get", req);
-    //The messages and http packages provide various utility functions which are useful
-    //when dealing with HTTP requests/responses.
+    //The messages and http packages provide various utility functions
+    //which are useful when dealing with HTTP requests/responses.
     req = {};
     req.addHeader("Sample-Name", "http-client-connector");
     resp, _ = httpConnector.get("/get", req);

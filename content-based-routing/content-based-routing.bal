@@ -25,7 +25,8 @@ service<http> contentBasedRouting {
         } else {
             clientResponse, err = locationEP.post("/v2/594e026c1100004011d6d39c", {});
         }
-        //Native function "forward" sends back the clientResponse to the caller.
+        //Native function "forward" sends back the clientResponse to
+        //the caller
         if (err != null) {
             res.setStatusCode(500);
             res.setStringPayload(err.msg);

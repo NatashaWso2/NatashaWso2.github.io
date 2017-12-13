@@ -3,13 +3,13 @@ function printValue (string value) {
     println(value);
 }
 
-// This function takes two int values and return their sum as an int.
+// This function takes two int values and return their sum as an int
 function add (int a, int b) (int) {
     return a + b;
 }
 
 function main (string[] args) {
-    // Call a function which prints the given value to the console.
+    // Call a function which prints the given value to the console
     printValue("This is a sample text");
 
     // Directly print a value to the console.

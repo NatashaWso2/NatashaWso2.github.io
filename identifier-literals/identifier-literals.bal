@@ -1,6 +1,7 @@
 function main (string[] args) {
-    //The vertical bar (|) character is used to demarcate the identifier name.
-    //This is similar to string literals (using double quote characters to demarcate).
+    //The vertical bar (|) character is used to demarcate the identifier
+    //name. This is similar to string literals (using double quote
+    //characters to demarcate).
     string |first name| = "John";
     string |last name| = "Gosling";
 
@@ -9,8 +10,8 @@ function main (string[] args) {
     println(name);
 }
 
-//Sample function defined with function name and input parameters using identifier
-//literals.
+//Sample function defined with function name and input parameters using
+//identifier literals.
 function |combine names| (string |first name|,
                           string |last name|) (string) {
     return |first name| + " " + |last name|;

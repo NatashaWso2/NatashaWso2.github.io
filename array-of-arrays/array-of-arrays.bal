@@ -4,17 +4,18 @@ function main (string[] args) {
     println(lengthof xx);
     println(lengthof xx[0]);
 
-    // Initialize three dimensional array with one value. In this case value is a
-    // two dimensional array.
+    // Initialize three dimensional array with one value.
+    // In this case value is a two dimensional array.
     int[][][] xxx = [xx];
     xxx[0][0][1] = 10;
     println(xxx[0][0][1]);
 
-    // Initialize the outer most array of the two dimensional array with
-    // empty value.
+    // Initialize the outer most array of the two dimensional
+    // array with empty value.
     int[][] aa = [];
 
-    // Set the initialized one dimensional array to the two dimensional array.
+    // Set the initialized one dimensional array to the
+    // two dimensional array.
     int[] a = [9];
     aa[0] = a;
 

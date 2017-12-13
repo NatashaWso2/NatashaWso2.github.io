@@ -10,8 +10,8 @@ service<ws> SimpleProxyServer {
     string remoteUrl = "wss://echo.websocket.org";
     string remoteServerCallbackService = "ClientService";
 
-    // Create a client connection to remote server from ballerina when new client
-    // connects to this service endpoint.
+    // Create a client connection to remote server from ballerina when
+    // new client connects to this service endpoint.
     resource onHandshake(ws:HandshakeConnection con) {
         endpoint<ws:WsClient> c {
             create ws:WsClient(remoteUrl, remoteServerCallbackService);

@@ -1,9 +1,9 @@
 import ballerina.file;
 import ballerina.io;
 
-// This function will return a ByteChannel from a given file location according
-// to the specified file permission whether the file should be opened for
-// reading/writing.
+// This function will return a ByteChannel from a given file
+// location according to the specified file permission whether
+// the file should be opened for reading/writing.
 function getFileChannel (string filePath, string permission) (io:ByteChannel) {
     //Here's how the path of the file will be specified.
     file:File src = {path:filePath};
@@ -12,7 +12,8 @@ function getFileChannel (string filePath, string permission) (io:ByteChannel) {
     return channel;
 }
 
-// This function will read the specified number of bytes from the given channel.
+// This function will read the specified number of bytes
+// from the given channel.
 function readBytes (io:ByteChannel channel, int numberOfBytes) (blob, int) {
     blob bytes;
     int numberOfBytesRead;
@@ -21,16 +22,19 @@ function readBytes (io:ByteChannel channel, int numberOfBytes) (blob, int) {
     return bytes, numberOfBytesRead;
 }
 
-// This function will write a byte content with the given offset to a channel.
+// This function will write a byte content with the given offset to a
+// channel.
 function writeBytes (io:ByteChannel channel, blob content, int startOffset) (int) {
     //Here's how the bytes are written to the channel.
     int numberOfBytesWritten = channel.writeBytes(content, startOffset);
     return numberOfBytesWritten;
 }
 
-// This function will copy all content from source channel to a destination channel.
+// This function will copy all content from source channel to a
+// destination channel
 function copy (io:ByteChannel src, io:ByteChannel dst) {
-    //Specifies the number of bytes which should be read from a single read operation.
+    //Specifies the number of bytes which should be read from a single
+    // read operation.
     int bytesChunk = 10000;
     blob readContent;
     int readCount = -1;

@@ -1,4 +1,4 @@
-// A const declaration can appear only as a top-level construct in Ballerina
+// A const declaration can appear only as a top-level construct
 const float PI = 3.14159;
 
 function main (string[] args) {

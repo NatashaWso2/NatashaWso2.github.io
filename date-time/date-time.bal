@@ -1,6 +1,6 @@
 function main (string[] args) {
-    //Time struct can be created by currentTime, createTime or parse functions.
-    //Get the current time.
+    //Time struct can be created by currentTime, createTime or parse
+    //functions. Get the current time.
     Time time = currentTime();
     int currentTimeMills = time.time;
     println("Current system time in milliseconds: " + currentTimeMills);
@@ -12,8 +12,9 @@ function main (string[] args) {
     //based on the given format string.
     Time t1 = parse("2017-06-26T09:46:22.444-0500", "yyyy-MM-dd'T'HH:mm:ss.SSSZ");
     println("Parsed Time: " + t1.toString());
-    //String representation of time can be retrieved via toString or format
-    //functions.Get the ISO 8601 formatted string of a given time.
+    //String representation of time can be retrieved via toString or
+    //format functions.
+    // Get the ISO 8601 formatted string of a given time
     string standardTimeString = time.toString();
     println("Current system time in ISO format: " + standardTimeString);
     //Get the formatted string of a given time.
@@ -54,8 +55,8 @@ function main (string[] args) {
     //one year, one month and one second to the current time.
     Time tmAdd = time.addDuration(1, 1, 0, 0, 0, 1, 0);
     println("After add duration: " + tmAdd.toString());
-    //Subtract a given duration from the time. Here we are subtracting one year,
-    //one month and one second from the current time.
+    //Subtract a given duration from the time. Here we are subtracting
+    //one year, one month and one second from the current time.
     Time tmSub = time.subtractDuration(1, 1, 0, 0, 0, 1, 0);
     println("After subtract duration: " + tmSub.toString());
     //Convert to a different time zone.

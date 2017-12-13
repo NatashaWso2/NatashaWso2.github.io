@@ -38,7 +38,8 @@ function main (string[] args) {
     file:File possibleDir = {path:"/tmp/dir/abc"};
     println("file is a directory: " + possibleDir.isDirectory());
 
-    //Create new files inside a directory (ignoring all 3 possible return values).
+    //Create new files inside a directory
+    //Ignore all 3 possible return values
     file:File newFile1 = {path:"/tmp/dir/abc/file1.txt"};
     _,_,_ = newFile1.createNewFile();
 

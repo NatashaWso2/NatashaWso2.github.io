@@ -89,8 +89,8 @@ $( document ).ready(function() {
             $('.theme-popup').remove();
         } else {
             var popup = $('<div class="theme-popup"></div>')
-                .append($('<div class="theme" id="light">Light<div>'))
                 .append($('<div class="theme" id="rust">Rust<span class="default">(default)</span></div>'))
+                .append($('<div class="theme" id="light">Light<div>'))
                 .append($('<div class="theme" id="coal">Coal</div>'))
                 .append($('<div class="theme" id="navy">Navy</div>'))
                 .append($('<div class="theme" id="ayu">Ayu</div>'));
@@ -186,7 +186,7 @@ $( document ).ready(function() {
         if(!lines_hidden) { return; }
 
         // add expand button
-        pre_block.prepend("<div class=\"buttons\"><i class=\"fa fa-expand\" title=\"Show hidden lines\"></i></div>");
+        // pre_block.prepend("<div class=\"buttons\"><i class=\"fa fa-expand\" title=\"Show hidden lines\"></i></div>");
 
         pre_block.find("i").click(function(e){
             if( $(this).hasClass("fa-expand") ) {
@@ -211,10 +211,13 @@ $( document ).ready(function() {
             pre_block.prepend("<div class=\"buttons\"></div>");
             buttons = pre_block.find(".buttons");
         }
-        buttons.prepend("<i class=\"fa fa-play play-button hidden\" title=\"Run this code\"></i>");
-        buttons.prepend("<i class=\"fa fa-copy clip-button\" title=\"Copy to clipboard\"><i class=\"tooltiptext\"></i></i>");
-
-        let code_block = pre_block.find("code").first();
+        // Only provide the edit and copy button to bal files
+        if (block == 0) {
+            buttons.prepend("<i id=edit-code-button class=\"fa fa-edit\">Edit</i>");
+            //buttons.prepend("<i class=\"fa fa-play play-button hidden\" title=\"Run this code\"></i>");
+            buttons.prepend("<i class=\"fa fa-copy clip-button\" title=\"Copy to clipboard\"><i class=\"tooltiptext\"></i></i>");
+        }
+        var code_block = pre_block.find("code").first();
         if (window.ace && code_block.hasClass("editable")) {
             buttons.prepend("<i class=\"fa fa-history reset-button\" title=\"Undo changes\"></i>");
         }
@@ -231,6 +234,14 @@ $( document ).ready(function() {
             editor.setValue(editor.originalCode);
             editor.clearSelection();
         });
+    });
+
+    $("#edit-code-button").click(function(){
+        var path = url.replace(".html", ".bal");
+        // get the path of the bal file
+        path = path.split("/").splice(-2).join("/")
+        var editWindow = window.open("https://github.com/NatashaWso2/examples/edit/master/modules/ballerina-by-example/" +
+                            "src/"+ path);
     });
 
     var clipboardSnippets = new Clipboard('.clip-button', {

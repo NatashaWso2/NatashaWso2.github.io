@@ -17,11 +17,10 @@ function main (string[] args) {
             f -> fork;
         }
     } join (some 1) (map results) {
-        //Here we use "some 1" as the join condition which means wait for any one of
-        //the workers.
-        //When the join condition has been satisfied, results 'map' will be filled with
-        //the returned values from the workers.
-
+        //Here we use "some 1" as the join condition which means wait for any
+        //one of the workers.
+        //When the join condition has been satisfied, results 'map' will be
+        //filled with the returned values from the workers.
         // Check whether the completed worker is 'w1'.
         if (results["w1"] != null) {
             var resW1, _ = (any[])results["w1"];

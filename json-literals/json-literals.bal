@@ -4,17 +4,18 @@ function main (string[] args) {
     json empty = {};
 
     int age = 30;
-    //Create a JSON object. Keys can be defined with or without quotes.
+    //Create a JSON object. Keys can be defined with or without quotes
     //Values can be any expression.
     json p = {fname:"John", lname:"Stallone", "age":age};
     println(p);
 
-    //You can access the object values by using dot (.) notation or array index
-    //notation.
+    //You can access the object values by using dot (.) notation or array
+    //index notation.
     json firstName = p.fname;
     println(firstName);
 
-    //Array index notation allows you use any string valued expression as the index.
+    //Array index notation allows you use any string valued expression as
+    //the index.
     json lastName = p["lname"];
     println(lastName);
 

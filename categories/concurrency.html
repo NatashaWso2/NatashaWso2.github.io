@@ -1,0 +1,164 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Standard Libraries - Ballerina By Example</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="A description">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <base href="../">
+
+        <link rel="stylesheet" href="book.css">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:500" rel="stylesheet" type="text/css">
+
+        <link rel="shortcut icon" href="favicon.png">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme -->
+        
+
+        
+
+        <!-- Fetch Clipboard.js from CDN but have a local fallback -->
+        <script src="https://cdn.jsdelivr.net/clipboard.js/1.6.1/clipboard.min.js"></script>
+        <script>
+            if (typeof Clipboard == 'undefined') {
+                document.write(unescape("%3Cscript src='clipboard.min.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch JQuery from CDN but have a local fallback -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script>
+            if (typeof jQuery == 'undefined') {
+                document.write(unescape("%3Cscript src='jquery.js'%3E%3C/script%3E"));
+            }
+        </script>
+
+        <!-- Fetch store.js from local - TODO add CDN when 2.x.x is available on cdnjs -->
+        <script src="store.js"></script>
+
+    </head>
+    <body class="rust">
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme = store.get('mdbook-theme');
+            if (theme === null || theme === undefined) { theme = 'rust'; }
+            $('body').removeClass().addClass(theme);
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var sidebar = store.get('mdbook-sidebar');
+            if (sidebar === "hidden") { $("html").addClass("sidebar-hidden") }
+            else if (sidebar === "visible") { $("html").addClass("sidebar-visible") }
+        </script>
+
+        <div id="sidebar" class="sidebar">
+            <ul class="chapter"><li class="affix"><a href="index.html">Ballerina by Example</a></li><li><a href="categories/introduction.html"><strong>1.</strong> Introduction</a></li><li><ul class="section"><li><a href="hello-world/hello-world.html"><strong>1.1.</strong> Hello World</a></li><li><a href="hello-world-parallel/hello-world-parallel.html"><strong>1.2.</strong> Hello World Parallel</a></li><li><a href="hello-world-service/hello-world-service.html"><strong>1.3.</strong> Hello World Service</a></li></ul></li><li><a href="categories/types.html"><strong>2.</strong> Types</a></li><li><ul class="section"><li><a href="value-types/value-types.html"><strong>2.1.</strong> Value Types</a></li><li><a href="strings/strings.html"><strong>2.2.</strong> Strings</a></li><li><a href="blob-type/blob-type.html"><strong>2.3.</strong> Blob Type</a></li><li><a href="maps/maps.html"><strong>2.4.</strong> Maps</a></li><li><a href="xml/xml.html"><strong>2.5.</strong> XML</a></li><li><ul class="section"><li><a href="xml-namespaces/xml-namespaces.html"><strong>2.5.1.</strong> Namespaces</a></li><li><a href="xml-literal/xml-literal.html"><strong>2.5.2.</strong> Literal</a></li><li><a href="xml-attributes/xml-attributes.html"><strong>2.5.3.</strong> Attributes</a></li><li><a href="xml-functions/xml-functions.html"><strong>2.5.4.</strong> Functions</a></li><li><a href="xml-to-json-conversion/xml-to-json-conversion.html"><strong>2.5.5.</strong> JSON Conversion</a></li></ul></li><li><a href="json/json.html"><strong>2.6.</strong> JSON</a></li><li><ul class="section"><li><a href="json-literals/json-literals.html"><strong>2.6.1.</strong> Literals</a></li><li><a href="json-arrays/json-arrays.html"><strong>2.6.2.</strong> Arrays</a></li><li><a href="json-struct-map-conversion/json-struct-map-conversion.html"><strong>2.6.3.</strong> Struct/Map Conversion</a></li><li><a href="constrained-json/constrained-json.html"><strong>2.6.4.</strong> Constrained JSON</a></li><li><a href="json-to-xml-conversion/json-to-xml-conversion.html"><strong>2.6.5.</strong> XML Conversion</a></li></ul></li><li><a href="datatables/datatables.html"><strong>2.7.</strong> Datatables</a></li><li><a href="any-type/any-type.html"><strong>2.8.</strong> Any Type</a></li><li><a href="var/var.html"><strong>2.9.</strong> Var</a></li><li><a href="identifier-literals/identifier-literals.html"><strong>2.10.</strong> Identifier Literals</a></li><li><a href="constants/constants.html"><strong>2.11.</strong> Constants</a></li><li><a href="global-variables/global-variables.html"><strong>2.12.</strong> Global Variables</a></li><li><a href="arrays/arrays.html"><strong>2.13.</strong> Arrays</a></li><li><a href="array-of-arrays/array-of-arrays.html"><strong>2.14.</strong> Array of Arrays</a></li><li><a href="structs/structs.html"><strong>2.15.</strong> Structs</a></li><li><a href="enums/enums.html"><strong>2.16.</strong> Enums</a></li></ul></li><li><a href="categories/operators.html"><strong>3.</strong> Type Operators</a></li><li><ul class="section"><li><a href="typeof/typeof.html"><strong>3.1.</strong> Typeof</a></li><li><a href="lengthof/lengthof.html"><strong>3.2.</strong> Lengthof</a></li><li><a href="type-casting/type-casting.html"><strong>3.3.</strong> Type Casting</a></li><li><a href="type-conversion/type-conversion.html"><strong>3.4.</strong> Type Conversion</a></li></ul></li><li><a href="functions/functions.html"><strong>4.</strong> Functions</a></li><li><ul class="section"><li><a href="function-pointers/function-pointers.html"><strong>4.1.</strong> Function Pointers</a></li><li><a href="lambda/lambda.html"><strong>4.2.</strong> Lambda</a></li><li><a href="named-returns/named-returns.html"><strong>4.3.</strong> Named Returns</a></li><li><a href="multiple-return-values/multiple-return-values.html"><strong>4.4.</strong> Multiple Return Values</a></li></ul></li><li><a href="categories/transformer.html"><strong>5.</strong> Transformer</a></li><li><ul class="section"><li><a href="transform-struct/transform-struct.html"><strong>5.1.</strong> Struct Transformations</a></li><li><a href="transform-json/transform-json.html"><strong>5.2.</strong> JSON Transformations</a></li></ul></li><li><a href="categories/flow-control.html"><strong>6.</strong> Flow Control</a></li><li><ul class="section"><li><a href="if-else/if-else.html"><strong>6.1.</strong> If Else</a></li><li><a href="while/while.html"><strong>6.2.</strong> While</a></li></ul></li><li><a href="transactions/transactions.html"><strong>7.</strong> Transactions</a></li><li><a href="categories/error-handling.html"><strong>8.</strong> Error Handling</a></li><li><ul class="section"><li><a href="errors/errors.html"><strong>8.1.</strong> Errors</a></li><li><a href="throw/throw.html"><strong>8.2.</strong> Throw</a></li><li><a href="try-catch-finally/try-catch-finally.html"><strong>8.3.</strong> Try/Catch/Finally</a></li></ul></li><li><a href="categories/concurrency.html" class="active"><strong>9.</strong> Concurrency</a></li><li><ul class="section"><li><a href="fork-join/fork-join.html"><strong>9.1.</strong> Fork/Join</a></li><li><ul class="section"><li><a href="fork-join-condition-some/fork-join-condition-some.html"><strong>9.1.1.</strong> Condition Some</a></li><li><a href="fork-join-variable-access/fork-join-variable-access.html"><strong>9.1.2.</strong> Variable Access</a></li></ul></li><li><a href="worker/worker.html"><strong>9.2.</strong> Worker</a></li><li><ul class="section"><li><a href="worker-interaction/worker-interaction.html"><strong>9.2.1.</strong> Worker Interaction</a></li></ul></li></ul></li><li><a href="categories/concurrency.html" class="active"><strong>10.</strong> Standard Libraries</a></li><li><ul class="section"><li><a href="date-time/date-time.html"><strong>10.1.</strong> Date Time</a></li><li><a href="caching/caching.html"><strong>10.2.</strong> Caching</a></li><li><a href="config-api/config-api.html"><strong>10.3.</strong> Config API</a></li><li><a href="file-api/file-api.html"><strong>10.4.</strong> File API</a></li><li><a href="categories/io-api.html"><strong>10.5.</strong> I/O API</a></li><li><ul class="section"><li><a href="byte-io/byte-io.html"><strong>10.5.1.</strong> Byte I/O</a></li><li><a href="character-io/character-io.html"><strong>10.5.2.</strong> Character I/O</a></li><li><a href="record-i-o/record-i-o.html"><strong>10.5.3.</strong> Record I/O</a></li></ul></li><li><a href="log-api/log-api.html"><strong>10.6.</strong> Log API</a></li><li><a href="math-functions/math-functions.html"><strong>10.7.</strong> Math</a></li><li><a href="sql-connector/sql-connector.html"><strong>10.8.</strong> SQL</a></li><li><a href="categories/task.html"><strong>10.9.</strong> Task</a></li><li><ul class="section"><li><a href="task-timer/task-timer.html"><strong>10.9.1.</strong> Task Timer</a></li><li><a href="task-appointment/task-appointment.html"><strong>10.9.2.</strong> Task Appointment</a></li></ul></li></ul></li><li><a href="categories/integration.html"><strong>11.</strong> Integration</a></li><li><ul class="section"><li><a href="categories/http-https.html"><strong>11.1.</strong> HTTP/HTTPS</a></li><li><ul class="section"><li><a href="https-server-connector/https-server-connector.html"><strong>11.1.1.</strong> Server Configuration</a></li><li><a href="http-sessions/http-sessions.html"><strong>11.1.2.</strong> Sessions</a></li><li><a href="http-client-connector/http-client-connector.html"><strong>11.1.3.</strong> Client Connector Configuration</a></li><li><a href="categories/dispatching.html"><strong>11.1.4.</strong> Dispatching</a></li><li><ul class="section"><li><a href="base-path-and-path/base-path-and-path.html"><strong>11.1.4.1.</strong> Base &amp; and Path</a></li><li><a href="query-and-path-param/query-and-path-param.html"><strong>11.1.4.2.</strong> Query &amp; Path Param</a></li><li><a href="produces-consumes/produces-consumes.html"><strong>11.1.4.3.</strong> Produces/Consumes</a></li></ul></li><li><a href="categories/routing.html"><strong>11.1.5.</strong> Routing</a></li><li><ul class="section"><li><a href="content-based-routing/content-based-routing.html"><strong>11.1.5.1.</strong> Content Based</a></li><li><a href="header-based-routing/header-based-routing.html"><strong>11.1.5.2.</strong> Header Based</a></li></ul></li><li><a href="https-server-client-connectors/https-server-client-connectors.html"><strong>11.1.6.</strong> Server-Client</a></li><li><a href="passthrough/passthrough.html"><strong>11.1.7.</strong> Passthrough</a></li><li><a href="mutual-ssl/mutual-ssl.html"><strong>11.1.8.</strong> Mutual SSL</a></li><li><a href="http-to-websocket-upgrade/http-to-websocket-upgrade.html"><strong>11.1.9.</strong> WebSocket Upgrade</a></li></ul></li></ul></li><li><a href="websocket-basic-sample/websocket-basic-sample.html"><strong>12.</strong> WebSocket</a></li><li><ul class="section"><li><a href="websocket-chat-application/websocket-chat-application.html"><strong>12.1.</strong> Chat Application</a></li><li><a href="websocket-proxy-server/websocket-proxy-server.html"><strong>12.2.</strong> Proxy Server</a></li></ul></li></ul>
+        </div>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page" tabindex="-1">
+                
+                <div id="menu-bar" class="menu-bar">
+                    <div class="left-buttons">
+                        <i id="sidebar-toggle" class="fa fa-bars" title="Toggle sidebar"></i>
+                        <i id="edit-button" class="fa fa-edit">Edit</i>
+                        <!--<i id="theme-toggle" class="fa fa-paint-brush" title="Change theme"></i>-->
+                    </div>
+
+                    <h1 class="menu-title">Ballerina By Example</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html">
+                            <!--<i id="print-button" class="fa fa-print" title="Print this book"></i>-->
+                        </a>
+                    </div>
+                </div>
+
+                <div id="content" class="content">
+                    <a class="header" href="categories/concurrency.html#concurrency" id="concurrency"><h1>Concurrency</h1></a>
+<p>Ballerina has concurrency built into the syntax, explicitly in fork-join and worker and implicitly in resource
+(also see: <a href="categories/task.html">Task</a>)</p>
+
+                </div>
+
+                <!--
+                Constrain the space between buttons on small screen so the total
+                width of the buttons group will not exceed the main content
+                above.
+                -->
+                <div class="nav-wrapper">
+                    <!-- Mobile navigation buttons -->
+                    
+                        <a rel="prev" href="try-catch-finally/try-catch-finally.html" class="mobile-nav-chapters previous" title="Previous chapter">
+                            <i class="fa fa-angle-left"></i>
+                        </a>
+                    
+
+                    
+                        <a rel="next" href="fork-join/fork-join.html" class="mobile-nav-chapters next" title="Next chapter">
+                            <i class="fa fa-angle-right"></i>
+                        </a>
+                    
+
+                    <div style="clear: both"></div>
+                </div>
+
+            </div>
+
+            
+                <a href="try-catch-finally/try-catch-finally.html" class="nav-chapters previous" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+            
+
+            
+                <a href="fork-join/fork-join.html" class="nav-chapters next" title="You can navigate through the chapters using the arrow keys">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+            
+
+        </div>
+
+
+        <!-- Local fallback for Font Awesome -->
+        <script>
+            if ($(".fa").css("font-family") !== "FontAwesome") {
+                $('<link rel="stylesheet" type="text/css" href="_FontAwesome/css/font-awesome.css">').prependTo('head');
+            }
+            // START - Ballerina-By-Example customization
+            $("#edit-button").click(function(){
+                var editWindow = window.open("https://github.com/NatashaWso2/examples/edit/master/modules/ballerina-by-example/" +
+                        "src/categories/concurrency.md");
+            });
+            // END - Ballerina-By-Example customization
+        </script>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        
+
+        
+
+        
+
+        
+
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS script -->
+        
+
+    </body>
+</html>

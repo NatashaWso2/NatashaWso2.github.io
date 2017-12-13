@@ -1,4 +1,5 @@
-// Workers in ballerina allow users to delegate tasks to a new worker thread.
+// Workers in ballerina allow users to delegate tasks to a new worker
+// thread.
 function main (string[] args) {
     worker w1 {
         int iw = 200;

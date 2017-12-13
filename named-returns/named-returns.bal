@@ -1,18 +1,19 @@
-// These names are treated as variables defined at the top of the function.
+// These names are treated as variables defined at the top of the
+// function
 function divideBy10 (int d) (int quotient, int remainder) {
     return d / 10, d % 10;
 }
 
-// If the return statement does not contain any argument then the named return
-// values will be returned.
+// If the return statement does not contain any argument then the
+// named return values will be returned.
 function divideBy5 (int d) (int quotient, int remainder) {
     quotient = d / 5;
     remainder = d % 5;
     return;
 }
 
-// Named return variables are treated as local variables and will be initialized
-// to their zero value.
+// Named return variables are treated as local variables and will be
+// initialized to their zero value.
 function getDefaultValues () (int a, float b,
                               boolean c, string d) {
     return a, b, c, d;

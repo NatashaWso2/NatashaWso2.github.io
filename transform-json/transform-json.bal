@@ -5,7 +5,7 @@ struct Person {
     string city;
 }
 
-//Defining transformer to convert from Person type to constrained JSON.
+//Defining transformer to convert from Person type to constrained JSON
 transformer <Person p, json<Person> j> updateCity(string city) {
     j.name = p.name;
     j.age = p.age;
@@ -19,7 +19,8 @@ function main (string[] args) {
     //Declare a Person variable.
     Person p;
 
-    //Declare a type conversion error to accept any type conversion errors thrown.
+    //Declare a type conversion error to accept any type conversion
+    //errors thrown.
     TypeConversionError err;
     //Convert JSON to a Person type variable.
     p, err = <Person>j;
@@ -32,8 +33,8 @@ function main (string[] args) {
     //Define a constant city value as "London".
     string city = "London";
 
-    //Convert p of type Person to the response JSON, using the transformer
-    //defined earlier.
+    //Convert p of type Person to the response JSON, using the
+    //transformer defined earlier.
     json<Person> response = <json<Person>, updateCity(city)> p;
 
     println(response);

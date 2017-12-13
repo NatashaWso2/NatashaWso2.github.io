@@ -15,8 +15,8 @@ function main (string[] args) {
     xml x4 = xml `<?target data?>`;
     println(x4);
 
-    // Multiple XML items can be combined to form a sequence of XML. The resulting
-    // sequence is again an XML on its own.
+    // Multiple XML items can be combined to form a sequence of XML.
+    // The resulting sequence is again an XML on its own.
     xml x5 = x1 + x2 + x3 + x4;
     println("\nResulting XML sequence:");
     println(x5);

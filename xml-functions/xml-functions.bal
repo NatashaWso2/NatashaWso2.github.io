@@ -4,8 +4,8 @@ function main (string[] args) {
     xml someText = xml `Hello, World!`;
     xml content = someText + bookName + bookComment;
 
-    // Other than the XML literal syntax, XML can be parsed using a string.
-    // The string should be a valid XML.
+    // Other than the XML literal syntax, XML can be parsed using a
+    // string. The string should be a valid XML.
     string xmlString = "<book/>";
     var book, _ = <xml>xmlString;
 

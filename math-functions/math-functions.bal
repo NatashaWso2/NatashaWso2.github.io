@@ -29,6 +29,6 @@ function main (string[] args) {
     float cubeRoot = math:cbrt(-27);
     println("Cube root of 0.027415567780803774   : " + cubeRoot);
 
-    //There are altogether 40+ methods in ballerina math API to perform numeric
-    //operations and you can find them in "ballerina.math" package.
+    //There are altogether 40+ methods in ballerina.math package to
+    //perform numeric operations.
 }

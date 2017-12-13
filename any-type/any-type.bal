@@ -14,7 +14,8 @@ function main (string[] args) {
     var intVal, _ = (int)a;
     println(intVal + 10);
 
-    //You can assign a variable of any data type in Ballerina to 'any' typed variable
+    //You can assign a variable of any data type in Ballerina to 'any'
+    //typed variable
     int[] ia = [1, 3, 5, 6];
     any ar = ia;
     println(ar);

@@ -17,8 +17,9 @@ service<ws> SimpleSecureServer {
     string ping = "ping";
     blob pingData = ping.toBlob("UTF-8");
 
-    // This resource is responsible for handling user logic on handshake time.
-    // Note that the connection is not yet established while this code is running.
+    // This resource is responsible for handling user logic on handshake
+    // time. Note that the connection is not yet established while this
+    // code is running.
     resource onHandshake(ws:HandshakeConnection conn) {
         println("\nNew client is going to connect");
         println("Connection ID: " + conn.connectionID);
@@ -40,7 +41,8 @@ service<ws> SimpleSecureServer {
         printHeaders(conn.getUpgradeHeaders());
     }
 
-    // This resource is triggered when a new text frame is received from a client.
+    // This resource is triggered when a new text frame is received from
+    // a client.
     resource onTextMessage (ws:Connection conn, ws:TextFrame frame) {
         println("\ntext message: " + frame.text + " & is final fragment: "
                 + frame.isFinalFragment);
@@ -56,7 +58,8 @@ service<ws> SimpleSecureServer {
         }
     }
 
-    // This resource is triggered when a new binary frame is received from a client.
+    // This resource is triggered when a new binary frame is received
+    //from a client.
     resource onBinaryMessage(ws:Connection conn, ws:BinaryFrame frame) {
         println("\nNew binary message received");
         blob b = frame.data;
@@ -64,7 +67,8 @@ service<ws> SimpleSecureServer {
         conn.pushBinary(b);
     }
 
-    // This resource is triggered when a ping message is received from the client.
+    // This resource is triggered when a ping message is received from
+    //the client.
     resource onPing(ws:Connection conn, ws:PingFrame frame) {
         conn.pong(frame.data);
     }
@@ -74,18 +78,18 @@ service<ws> SimpleSecureServer {
         println("Pong received");
     }
 
-    // This resource is triggered when a particular client reaches it's idle timeout
-    // defined in the ws:configuration annotation.
+    // This resource is triggered when a particular client reaches it's
+    // idle timeout defined in the ws:configuration annotation.
     resource onIdleTimeout(ws:Connection conn) {
-        // This resource will be triggered after 180 seconds if there is no activity in
-        // a given channel.
+        // This resource will be triggered after 180 seconds if there
+        // is no activity in a given channel.
         println("\nReached idle timeout");
         println("Closing connection " + conn.getID());
         conn.closeConnection(1001, "Connection timeout");
     }
 
-    // This resource is triggered when a client connection is closed from the client
-    // side.
+    // This resource is triggered when a client connection is closed
+    // from the client side.
     resource onClose(ws:Connection conn, ws:CloseFrame closeFrame) {
         println("\nClient left with status code " + closeFrame.statusCode +
                 " because " + xcloseFrame.reason);

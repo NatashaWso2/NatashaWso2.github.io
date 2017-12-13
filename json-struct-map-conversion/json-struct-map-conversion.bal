@@ -22,13 +22,14 @@ function main (string[] args) {
     println(j);
     println(j.writer.lname);
 
-    // Similarly you can convert a struct to a map. This conversion is also safe.
+    // Similarly you can convert a struct to a map. This conversion is
+    // also safe.
     map m = <map>theRevenant;
     var writer, _ = (person)m["writer"];
     println(writer.age);
 
-    //'json' to struct conversion. This conversion is unsafe because the field names
-    //and type are unknown until runtime.
+    //'json' to struct conversion. This conversion is unsafe because the
+    // field names and type are unknown until runtime.
     json inceptionJ = {title:"Inception", year:"2010",
                           released:"16 Jul 2010",
                           writer:{fname:"Christopher",

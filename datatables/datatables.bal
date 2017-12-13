@@ -1,7 +1,8 @@
 import ballerina.data.sql;
 
-//This is the Employee struct. The field names of this should match column names
-//of the table. The field types should match with the sql types.
+//This is the Employee struct. The field names of this should match
+//column names of the table. The field types should match with the
+//sql types.
 struct Employee {
     int id;
     string name;
@@ -28,11 +29,11 @@ function main (string[] args) {
     count = testDB.update("INSERT INTO EMPLOYEE VALUES(2, 'Anne', 4060.50, true,
         '1999-12-31', '13:40:24', '2017-05-23 09:15:28')", null);
 
-    //Query the table using SQL connector select action. Either select or call
-    //action can return a datatable.
+    //Query the table using SQL connector select action. Either select
+    //or call action can return a datatable.
     datatable dt = testDB.select("SELECT * from EMPLOYEE", null);
-    //Iterate through the result until hasNext() become false and retrieve
-    //the data struct corresponding to each row.
+    //Iterate through the result until hasNext() become false and
+    //retrieve the data struct corresponding to each row.
     while (dt.hasNext()) {
         var rs, _ = (Employee)dt.getNext();
         println("Employee:"+ rs.id + "|" + rs.name +  "|" + rs.salary + "|" + rs.status

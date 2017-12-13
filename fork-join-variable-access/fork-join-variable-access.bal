@@ -1,4 +1,4 @@
-// In scope variables can be accessed within workers of fork-join statement.
+// In scope variables can be accessed within workers of fork-join
 function main (string[] args) {
     // Define variables which are visible to the forked workers.
     int i = 100;
@@ -27,7 +27,8 @@ function main (string[] args) {
             s -> fork;
         }
     } join (all) (map results) {
-        // Declare variables to receive the results from forked workers W1 and W2.
+        // Declare variables to receive the results from forked workers W1 and
+        // W2
         any[] r1;
         any[] r2;
         // The 'results' map contains a map of any type array from each worker
@@ -53,9 +54,9 @@ function main (string[] args) {
         println("[default worker] within join:
         Value of string from W2 [" + q + "]");
     }
-    // Print values after the fork-join statement to check effect on variables.
-    // Value type variables have not been changed since they are passed in as a
-    // copy of the original variable.
+    // Print values after the fork-join statement to check effect on
+    // variables. Value type variables have not been changed since they are passed
+    // in as a copy of the original variable.
     println("[default worker] after fork-join:
         Value of integer variable is [" + i + "]
         Value of string variable is [" + s + "]");

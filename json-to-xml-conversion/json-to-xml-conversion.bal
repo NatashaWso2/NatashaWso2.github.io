@@ -10,12 +10,12 @@ function main (string[] args) {
                            "codes":["4", "8"]
                        }
               };
-    //Convert to XML with default attribute prefix and arrayEntryTag.
+    //Convert to XML with default attribute prefix and arrayEntryTag
     jsonOptions options1 = {};
     xml x1 = j1.toXML(options1);
     println(x1);
 
-    //Convert to XML with custom attribute prefix and custom array tag.
+    //Convert to XML with custom attribute prefix and custom array tag
     json j2 = {"Store":{
                            "#id":"AST",
                            "name":"Anne",

@@ -3,7 +3,7 @@ function divideBy10 (int d) (int, int) {
 }
 
 function main (string[] args) {
-    //Here the variable type is inferred type from the initial value.
+    //Here the variable type is inferred type from the initial value
     // This is same as "int k = 5";
     var k = 5;
     println(10 + k);
@@ -12,12 +12,13 @@ function main (string[] args) {
     var strVar = "Hello!";
     println(strVar);
 
-    //Multiple assignment with 'var' allows you to define the variable then and there.
-    //Variable type is inferred from the right-hand side.
+    //Multiple assignment with 'var' allows you to define the variable
+    //then and there. Variable type is inferred from the right-hand side.
     var q, r = divideBy10(6);
     println("06/10: " + "quotient=" + q + " " + "remainder=" + r);
 
-    //To ignore a particular return value in a multiple assignment statement, use '_'.
+    //To ignore a particular return value in a multiple assignment
+    //statement, use '_'.
     var q1, _ = divideBy10(57);
     println("57/10: " + "quotient=" + q1);
 

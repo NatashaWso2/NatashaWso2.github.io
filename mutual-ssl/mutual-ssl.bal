@@ -27,10 +27,11 @@ service<http> helloWorld {
     }
 }
 
-// Ballerina client connector can be used to connect to the created https server.
-//You have to run the service before running this main function. As this is a mutual
-//ssl connection, client also needs to provide keyStoreFile, keyStorePassword,
-//trustStoreFile and trustStorePassword.
+// Ballerina client connector can be used to connect to the created
+// https server. You have to run the service before running this main
+// function. As this is a mutual ssl connection, client also needs to
+// provide keyStoreFile, keyStorePassword, trustStoreFile and
+// trustStorePassword.
 function main (string[] args) {
     endpoint<http:HttpClient> connectorEP {
         create http:HttpClient("https://localhost:9095", getConnectorConfigs());

@@ -2,7 +2,8 @@ import ballerina.net.http;
 // Service is invoke using BasePath value (/hbr)."}
 @http:configuration {basePath:"/hbr"}
 service<http> headerBasedRouting {
-    // The http:resourceConfig{} annotation with GET method declares the HTTP method."}
+    // The http:resourceConfig{} annotation with GET method declares the
+    // HTTP method.
     @http:resourceConfig {
         methods:["GET"],
         path:"/route"
@@ -18,11 +19,12 @@ service<http> headerBasedRouting {
         http:Request newRequest = {};
         http:Response clientResponse = {};
         http:HttpConnectorError err;
-        //Native function getHeader() returns header value of a specified header name.
+        //Native function getHeader() returns header value of a specified
+        //header name
         string nameString = req.getHeader("type");
         if (nameString == "location") {
-            //"post" represent the POST action of HTTP connector. Route payload to
-            //relevant service.
+            //"post" represent the POST action of HTTP connector. Route payload
+            //to the relevant service.
             clientResponse, err = locationEP.post("/v2/594e12271100001f13d6d3a6",
                                                   newRequest);
         } else {
@@ -30,8 +32,8 @@ service<http> headerBasedRouting {
             clientResponse, err = weatherEP.get("/data/2.5/weather?lat=35&lon=139&
                                                     appid=b1b1", newRequest);
         }
-        //Native function "forward" sends back the clientResponse to the caller if
-        //no any error is found.
+        //Native function "forward" sends back the clientResponse to the caller
+        //if no any error is found.
         if (err != null) {
             res.setStatusCode(500);
             res.setStringPayload(err.msg);

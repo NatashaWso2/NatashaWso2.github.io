@@ -3,7 +3,8 @@ struct Record {
     string name;
 }
 
-//Here's how you can throw an error. Next example shows you how to catch thrown errors.
+//Here's how you can throw an error. Next example shows you how to
+//catch thrown errors.
 function readRecord (Record value) {
     if (value == null) {
         error err = {msg:"Record is null"};

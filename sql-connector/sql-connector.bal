@@ -33,9 +33,10 @@ function main (string[] args) {
     //Column values generated during the update can be retrieved via
     //updateWithGeneratedKeys action. If the table has several auto
     //generated columns other than the auto incremented key, those column
-    //names should be given as an array. The values of the auto incremented
-    //column and the auto generated columns are returned as string array.
-    //Similar to the update action, the inserted row count is also returned.
+    //names should be given as an array.
+    //The values of the auto incremented column and the auto generated
+    //columns are returned as string array.
+    //Similar to the update action, the inserted row count is returned
     var count, ids = testDB.updateWithGeneratedKeys("INSERT INTO STUDENT
                       (AGE,NAME) VALUES (?, ?)", params, null);
     println("Inserted row count:" + count);
@@ -49,7 +50,8 @@ function main (string[] args) {
     println(jsonRes);
 
     //A Batch of data can be inserted using  batchUpdate action. Number
-    //of inserted rows for each insert in the batch is returned as an array.
+    //of inserted rows for each insert in the batch is returned as an
+    //array
     sql:Parameter p1 = {sqlType:sql:Type.INTEGER, value:10};
     sql:Parameter p2 = {sqlType:sql:Type.VARCHAR, value:"Smith"};
     sql:Parameter[] item1 = [p1, p2];
@@ -61,8 +63,8 @@ function main (string[] args) {
     println("Batch item 1 status:" + c[0]);
     println("Batch item 2 status:" + c[1]);
 
-    //A stored procedure can be invoked via call action. The direction is
-    //used to specify in/out/inout parameters.
+    //A stored procedure can be invoked via call action. The direction
+    //is used to specify in/out/inout parameters.
     sql:Parameter pAge = {sqlType:sql:Type.INTEGER, value:10};
     sql:Parameter pCount = {sqlType:sql:Type.INTEGER, direction: sql:Direction.IN};
     sql:Parameter pId = {sqlType:sql:Type.INTEGER, value:1, direction:

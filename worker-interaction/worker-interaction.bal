@@ -1,16 +1,17 @@
-//Workers interact with each other by sending and receiving messages.
-//Ballerina checks the send/receive signatures of every pair of workers and
-//validate in order to avoid deadlocks.
+//Workers interact with each other by sending and receiving messages
+//Ballerina checks the send/receive signatures of every pair of
+//workers and validate in order to avoid deadlocks.
 function main (string[] args) {
 
     worker w1 {
         int i = 100;
         float k = 2.34;
         println("[w1 -> w2] i: " + i + " k: " + k);
-        //Send a messages to worker 'w2'. This message contains two values of type
-        //int and float.
+        //Send a messages to worker 'w2'. This message contains two values
+        //of type int and float.
         i, k -> w2;
-        //Receive a message from worker w2. This message contains a json typed value.
+        //Receive a message from worker w2. This message contains a json
+        //typed value.
         json j = {};
         j <- w2;
         println("[w1 <- w2] j: " + j.toString());

@@ -1,7 +1,7 @@
 import ballerina.net.http;
 
-// By default Ballerina assumes that the service is to be exposed via HTTP/1.1
-// using the system default port
+// By default Ballerina assumes that the service is to be exposed via
+// HTTP/1.1 using the system default port
 service<http> helloWorld {
     // All resources are invoked with arguments of request and response
     resource sayHello (http:Request req, http:Response res) {
