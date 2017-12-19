@@ -52,7 +52,7 @@ table thead td {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 322px;
+  width: 320px;
   overflow-y: auto;
   padding: 10px 10px;
   font-size: 0.875em;
@@ -109,7 +109,8 @@ table thead td {
   white-space: nowrap;
 }
 .page-wrapper {
-  padding-left: 300px;
+  padding-left: 325px;
+  padding-right: 15px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -144,16 +145,25 @@ table thead td {
 }
 .language-comment{
   float: left;
-  width: 570px;
+  /*width: 530px;*/
+  width: 43%;
   border-right: 1px solid rgb(234, 230, 230);
   overflow-x: hidden !important;
   background-color: #fff !important;
+  font-style: italic;
   /*text-align: right;*/
+  color: #777 !important;
+}
+.language-ballerina {
+  width: 54%;
+  overflow-x: hidden;
 }
 .language-bash{
   float: right;
-  width: 751px;
+  width: 54%;
   margin-bottom: 12px;
+  right: 12px;
+  position: absolute;
 }
 .content a {
   text-decoration: none;
@@ -1021,4 +1031,9 @@ table thead td {
 }
 .tooltipped .tooltiptext {
   visibility: visible;
+}
+
+i.fa.fa-copy.clip-button {
+  right: 15px;
+  position: absolute;
 }

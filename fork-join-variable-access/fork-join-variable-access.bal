@@ -55,8 +55,8 @@ function main (string[] args) {
         Value of string from W2 [" + q + "]");
     }
     // Print values after the fork-join statement to check effect on
-    // variables. Value type variables have not been changed since they are passed
-    // in as a copy of the original variable.
+    // variables. Value type variables have not been changed since they are
+    // passed in as a copy of the original variable.
     println("[default worker] after fork-join:
         Value of integer variable is [" + i + "]
         Value of string variable is [" + s + "]");
