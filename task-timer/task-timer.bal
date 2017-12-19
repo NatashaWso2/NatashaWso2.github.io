@@ -6,11 +6,11 @@ int count;
 function main (string[] args) {
     println("Timer task demo");
 
-    // the cleanup function will be called every time the timer goes
+    // The cleanup function will be called every time the timer goes
     //off.
     function () returns (error) onTriggerFunction = cleanup;
 
-    // the cleanup error function will be called if an error occurs
+    // The cleanup error function will be called if an error occurs
     //while cleaning up.
     function (error e) onErrorFunction = cleanupError;
 

@@ -41,12 +41,12 @@ function main (string[] args) {
     }
 
     //Convert a datatable to JSON.
-    dt = testDB.select("SELECT id,name FROM EMPLOYEE", null);
+    dt = testDB.select("SELECT id,name FROM EMPLOYEE", null, null);
     var jsonRes, _ = <json>dt;
     println(jsonRes);
 
     //Convert a datatable to XML.
-    dt = testDB.select("SELECT id,name FROM EMPLOYEE", null);
+    dt = testDB.select("SELECT id,name FROM EMPLOYEE", null, null);
     var xmlRes, _ = <xml>dt;
     println(xmlRes);
 

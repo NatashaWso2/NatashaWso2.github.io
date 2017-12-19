@@ -1,7 +1,7 @@
 #Deploy the ballerina service
 $ ballerina run http-sessions.bal
 ballerina: deploying service(s) in 'http-sessions.bal'
-ballerina: started server connector http-9090
+ballerina: started HTTP/WS server connector 0.0.0.0:9090
 
 #Invoke the client using curl
 $ curl -v http://localhost:9090/session/sayHello

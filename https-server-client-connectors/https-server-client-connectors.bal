@@ -25,13 +25,13 @@ service<http> helloWorld {
 //function. As this is a 1-way ssl connection, client needs to provide
 //trustStoreFile and trustStorePassword.
 function main (string[] args) {
-    endpoint<http:HttpClient> connectorEP {
+    endpoint<http:HttpClient> httpEndpoint {
         create http:HttpClient("https://localhost:9095", getConnectorConfigs());
     }
     //Creates a request.
     http:Request req = {};
     http:Response resp = {};
-    resp, _ = connectorEP.get("/hello/", req);
+    resp, _ = httpEndpoint.get("/hello/", req);
     println("Response code: " + resp.getStatusCode());
     println("Response: " + resp.getStringPayload());
 }

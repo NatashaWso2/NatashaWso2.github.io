@@ -4,7 +4,7 @@ import ballerina.io;
 //This function will return a TextRecordChannel from a given file
 //The encoding is character represenation of the content in file i.e
 //UTF-8 ASCCI.
-//The rs is record seperator i.e newline etc. and fs is field seperator
+//The rs is record seperator i.e newline etc and fs is field seperator
 //i.e comma etc.
 function getFileRecordChannel (string filePath, string permission, string encoding,
                                string rs, string fs) (io:TextRecordChannel) {

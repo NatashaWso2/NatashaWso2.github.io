@@ -148,7 +148,7 @@ table thead td {
   border-right: 1px solid rgb(234, 230, 230);
   overflow-x: hidden !important;
   background-color: #fff !important;
-  text-align: right;
+  /*text-align: right;*/
 }
 .language-bash{
   float: right;

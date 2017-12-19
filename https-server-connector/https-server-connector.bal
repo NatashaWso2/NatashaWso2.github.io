@@ -2,7 +2,7 @@ import ballerina.net.http;
 
 //Ballerina server connector can be used to connect to a https client.
 //If the client needs to verify server authenticity when establishing
-//the connection, server needs to provide keyStoreFile,keyStorePassword
+//the connection,server needs to provide keyStoreFile,keyStorePassword
 //and certificate password as given here.
 @http:configuration {
     basePath:"/hello",

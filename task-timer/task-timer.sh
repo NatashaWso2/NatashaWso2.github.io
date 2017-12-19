@@ -1,3 +1,4 @@
+# Run the ballerina program
 $ ballerina run task-timer.bal
 Timer task demo
 Task ID:ff6c2d4f-d9c2-46f4-a176-306d31fd2830

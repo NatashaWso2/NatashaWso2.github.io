@@ -213,7 +213,7 @@ $( document ).ready(function() {
         }
         // Only provide the edit and copy button to bal files
         if (block == 0) {
-            buttons.prepend("<i id=edit-code-button class=\"fa fa-edit\">Edit</i>");
+            /*buttons.prepend("<i id=edit-code-button class=\"fa fa-edit\">Edit</i>");*/
             //buttons.prepend("<i class=\"fa fa-play play-button hidden\" title=\"Run this code\"></i>");
             buttons.prepend("<i class=\"fa fa-copy clip-button\" title=\"Copy to clipboard\"><i class=\"tooltiptext\"></i></i>");
         }

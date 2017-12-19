@@ -10,8 +10,8 @@ function main (string[] args) {
     println(name);
 }
 
-//Sample function defined with function name and input parameters using
-//identifier literals.
+//Sample function defined with function name and input parameters
+//using identifier literals.
 function |combine names| (string |first name|,
                           string |last name|) (string) {
     return |first name| + " " + |last name|;

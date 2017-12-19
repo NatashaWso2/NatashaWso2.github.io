@@ -1,9 +1,9 @@
 import ballerina.file;
 import ballerina.io;
 
-// This function will return a ByteChannel from a given file
-// location according to the specified file permission whether
-// the file should be opened for reading/writing.
+// This function will return a ByteChannel from a given file location
+// according to the specified file permission whether the file should
+// be opened for reading/writing.
 function getFileChannel (string filePath, string permission) (io:ByteChannel) {
     //Here's how the path of the file will be specified.
     file:File src = {path:filePath};
@@ -12,8 +12,8 @@ function getFileChannel (string filePath, string permission) (io:ByteChannel) {
     return channel;
 }
 
-// This function will read the specified number of bytes
-// from the given channel.
+// This function will read the specified number of bytes from the given
+// channel.
 function readBytes (io:ByteChannel channel, int numberOfBytes) (blob, int) {
     blob bytes;
     int numberOfBytesRead;
@@ -30,30 +30,51 @@ function writeBytes (io:ByteChannel channel, blob content, int startOffset) (int
     return numberOfBytesWritten;
 }
 
-// This function will copy all content from source channel to a
-// destination channel
+// This function will copy content from source channel to a destination
+// channel.
 function copy (io:ByteChannel src, io:ByteChannel dst) {
     //Specifies the number of bytes which should be read from a single
-    // read operation.
+    //read operation.
     int bytesChunk = 10000;
     blob readContent;
     int readCount = -1;
     int numberOfBytesWritten = 0;
-    //Here's how we specify to read all the content from
-    //source and copy it to the destination.
+    //Here's how we specify to read all the content from source and copy
+    //it to the destination.
     while (readCount != 0) {
         readContent, readCount = readBytes(src, bytesChunk);
         numberOfBytesWritten = writeBytes(dst, readContent, 0);
     }
 }
 
+// This function will copy all content from source channel to a
+// destination channel.
+function copyAll (io:ByteChannel src, io:ByteChannel dst) {
+    blob readContent;
+    int numberOfBytesRead;
+    //Here's how we read all content from the source
+    readContent,numberOfBytesRead = src.readAllBytes();
+    int numberOfBytesWritten = dst.writeBytes(readContent, 0);
+}
+
 function main (string[] args) {
+    //Read specified number of bytes from the given channel and write.
     string srcFilePath = "./files/ballerina.jpg";
-    string dstFilePath = "./files/ballerinaCopy.jpg";
+    string dstFilePath = "./files/ballerinaCopy1.jpg";
     io:ByteChannel sourceChannel = getFileChannel(srcFilePath, "r");
     io:ByteChannel destinationChannel = getFileChannel(dstFilePath, "w");
     println("Start to copy files from " + srcFilePath + " to " + dstFilePath);
     copy(sourceChannel, destinationChannel);
+    println("File copy completed. The copied file could be located in " + dstFilePath);
+    //Close the created connections.
+    sourceChannel.close();
+    destinationChannel.close();
+    //Read all bytes from the given channel and write.
+    dstFilePath = "./files/ballerinaCopy2.jpg";
+    sourceChannel = getFileChannel(srcFilePath, "r");
+    destinationChannel = getFileChannel(dstFilePath, "w");
+    println("Start to copy files from " + srcFilePath + " to " + dstFilePath);
+    copyAll(sourceChannel, destinationChannel);
     println("File copy completed. The copied file could be located in " + dstFilePath);
     //Close the created connections.
     sourceChannel.close();

@@ -1,4 +1,4 @@
-# To run the program, put the code in `websocket-client-connector.bal`
+# To run the program, put the code in `websocket-client-connector`
 # and use `ballerina run websocket-client-connector` command.
 $ ballerina run websocket-proxy-server.bal
 # Now that we can run this program using any WebSocket client with 

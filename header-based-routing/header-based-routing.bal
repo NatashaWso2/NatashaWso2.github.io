@@ -21,7 +21,7 @@ service<http> headerBasedRouting {
         http:HttpConnectorError err;
         //Native function getHeader() returns header value of a specified
         //header name
-        string nameString = req.getHeader("type");
+        string nameString = req.getHeader("type").value;
         if (nameString == "location") {
             //"post" represent the POST action of HTTP connector. Route payload
             //to the relevant service.

@@ -1,5 +1,5 @@
-// enum keyword defined before the identifier will indicate that this type
-// definition is an enum
+// enum keyword defined before the identifier will indicate that this
+// type definition is an enum
 enum colors {
     red,
     blue,

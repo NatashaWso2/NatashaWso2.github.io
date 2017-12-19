@@ -8,7 +8,7 @@ name
 Book1
 # Is the XML emtpy?
 false
-# Has only one element?
+# Does it have only one element?
 false
 # Subsequence of a sequence
 <!--some comment-->
@@ -24,5 +24,5 @@ Hello, World!<name>Book1</name><!--some comment-->
 <name>Book1</name>
 # Stripped XML
 Hello, World!<name>Book1</name><!--some comment-->
-# Coppied XML
+# Copied XML
 <!--some comment-->

@@ -1,5 +1,5 @@
 // As a best practice, error will be the last return value.
-// It's type should be 'errors:Error', a built-in reference type.
+// Its type should be 'error', a built-in reference type.
 function getAccountBalance (int accountID) (int, error) {
     //Here we create an instance of the error struct and return.
     //This logic is used only to explain the concept.
