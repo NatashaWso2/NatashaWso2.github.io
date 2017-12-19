@@ -448,6 +448,7 @@ table thead td {
 }
 .light pre {
   position: relative;
+  margin: 0 15px 0 35px;
 }
 .light pre > .buttons {
   position: absolute;
