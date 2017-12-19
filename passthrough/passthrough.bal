@@ -15,9 +15,9 @@ service<http> passthrough {
         string method = req.getMethod();
         http:Response clientResponse = {};
         http:HttpConnectorError err;
-        //Action execute() does a backend client call and returns the
-        //response. It includes endPoint, HTTP method, resource path
-        //and request as parameters.
+        //Action execute() does a backend client call and returns the response
+        //It includes endPoint, HTTP method, resource path and
+        //request as parameters.
         clientResponse, err = endPoint.execute(method, "/", req);
         //Native function "forward" sends back the clientResponse to the
         //caller if no any error is found.

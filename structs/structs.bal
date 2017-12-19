@@ -18,8 +18,8 @@ function main (string[] args) {
     Person p2 = {name:"Jack", age:20, parent:p1};
     println(p2);
 
-    //Get a value of a field of a struct. Fields can be accessed
-    //using dot(.) notation or using index.
+    //Get a value of a field of a struct. Fields can be accessed using
+    //dot(.) notation or using index.
     println(p2.name);
     println(p2["name"]);
 

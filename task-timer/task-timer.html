@@ -98,14 +98,13 @@ The delay specifies the delay between registering the task and its first executi
 
 
 
-The cleanup function will be called every time the timer goes
-off.
+The cleanup function will be called every time the timer goes off.
 
-The cleanup error function will be called if an error occurs
-while cleaning up.
+The cleanup error function will be called if an error occurs while
+cleaning up.
 
-Schedule a timer task which initially runs 500ms from now and
-there onwards runs every 1000ms.
+Schedule a timer task which initially runs 500ms from now and there
+onwards runs every 1000ms.
 
 
 
@@ -138,7 +137,6 @@ function main (string[] args) {
     println(&quot;Timer task demo&quot;);
 
     function () returns (error) onTriggerFunction = cleanup;
-
 
     function (error e) onErrorFunction = cleanupError;
 

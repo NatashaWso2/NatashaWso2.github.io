@@ -109,8 +109,8 @@ job 1 will run every 20 seconds
 
 
 
-job 2 will run every other minute (at 15 seconds past the
-minute)
+job 2 will run every other minute (at 15 seconds past the minute)
+
 
 
 
@@ -205,7 +205,7 @@ function main (string[] args) {
     worker w1 {
         log:printInfo(&quot;------- Scheduling Appointments ----------------&quot;);
 
-        function () returns (error) onTriggerFunction;
+        function () returns (errortyped) onTriggerFunction;
         function (error e) onErrorFunction;
 
         onTriggerFunction = appointment1Cleanup;

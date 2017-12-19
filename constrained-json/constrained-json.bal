@@ -18,8 +18,8 @@ function main (string[] args) {
     person.city = "Colombo";
     println(person);
 
-    // We can assign this Constrained JSON to a JSON. This will allow
-    // us to add new elements which are not in the struct.
+    // We can assign this Constrained JSON to a JSON. This will allow us to
+    // add new elements which are not in the struct.
     json employee = person;
 
     // After that, we can add new elements to the json.

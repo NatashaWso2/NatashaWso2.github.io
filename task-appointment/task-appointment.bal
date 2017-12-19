@@ -9,7 +9,7 @@ function main (string[] args) {
     worker w1 {
         log:printInfo("------- Scheduling Appointments ----------------");
 
-        function () returns (error) onTriggerFunction;
+        function () returns (errortyped) onTriggerFunction;
         function (error e) onErrorFunction;
 
         // job 1 will run every 20 seconds
@@ -18,8 +18,7 @@ function main (string[] args) {
         app1Tid, _ = task:scheduleAppointment(onTriggerFunction, onErrorFunction,
                                         "0/20 * * * * ?");
 
-        // job 2 will run every other minute (at 15 seconds past the
-        // minute)
+        // job 2 will run every other minute (at 15 seconds past the minute)
         onTriggerFunction = appointment2Cleanup;
         onErrorFunction = cleanupError;
         _, _ = task:scheduleAppointment(onTriggerFunction, onErrorFunction,

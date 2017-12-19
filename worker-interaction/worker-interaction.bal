@@ -7,11 +7,11 @@ function main (string[] args) {
         int i = 100;
         float k = 2.34;
         println("[w1 -> w2] i: " + i + " k: " + k);
-        //Send a messages to worker 'w2'. This message contains two values
-        //of type int and float.
+        //Send a messages to worker 'w2'. This message contains two values of
+        //type int and float.
         i, k -> w2;
-        //Receive a message from worker w2. This message contains a json
-        //typed value.
+        //Receive a message from worker w2. This message contains a json typed
+        //value.
         json j = {};
         j <- w2;
         println("[w1 <- w2] j: " + j.toString());

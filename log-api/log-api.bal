@@ -17,8 +17,8 @@ function main(string[] args) {
     log:printTrace("trace log");
     log:printWarn("warn log");
 
-    //To set the log level of the API use the CLI parameter: <br>
-    //-B[ballerina.log].level=[LOG_LEVEL] <br>
+    //To set the log level of the API use the CLI parameter:
+    //-B[ballerina.log].level=[LOG_LEVEL]
 
     //To configure using a config file, place the entry given below in
     //the file: [ballerina.log]

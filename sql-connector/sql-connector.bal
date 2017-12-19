@@ -6,8 +6,8 @@ function main (string[] args) {
         sql:DB.MYSQL, "localhost", 3306, "testdb", "root", "root",
             {maximumPoolSize:5});
     }
-    //Create a DB table using update action.If the DDL
-    //statement execution is success update action returns 0.
+    //Create a DB table using update action.If the DDL statement
+    //execution is success update action returns 0.
     int ret = testDB.update("CREATE TABLE STUDENT(ID INT AUTO_INCREMENT, AGE INT,
                                 NAME VARCHAR(255), PRIMARY KEY (ID))", null);
     println("Table creation status:" + ret);

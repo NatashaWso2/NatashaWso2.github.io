@@ -4,12 +4,12 @@ function main (string[] args) {
     Time time = currentTime();
     int currentTimeMills = time.time;
     println("Current system time in milliseconds: " + currentTimeMills);
-    //Create a time with the required year, month ,date,
-    //time and zone information.
+    //Create a time with the required year, month ,date, time and zone
+    //information.
     Time timeCreated = createTime(2017, 3, 28, 23, 42, 45, 554, "America/Panama");
     println("Created Time: " + timeCreated.toString());
-    //Returns the time for the given string representation
-    //based on the given format string.
+    //Returns the time for the given string representation based on the
+    //given format string.
     Time t1 = parse("2017-06-26T09:46:22.444-0500", "yyyy-MM-dd'T'HH:mm:ss.SSSZ");
     println("Parsed Time: " + t1.toString());
     //String representation of time can be retrieved via toString or
@@ -20,8 +20,8 @@ function main (string[] args) {
     //Get the formatted string of a given time.
     string customTimeString = time.format("yyyy-MM-dd-E");
     println("Current system time in custom format: " + customTimeString);
-    //Information of time can be retrieved via following
-    //functions.Get the year of a given time.
+    //Information of time can be retrieved via following functions.
+    //Get the year of a given time.
     int year = time.year();
     println("Year: " + year);
     //Get the month of a given time.
@@ -51,8 +51,8 @@ function main (string[] args) {
     //Get time components using a single function.
     hour, minute, second, milliSecond = time.getTime();
     println("Time:" + hour + ":" + minute + ":" + second + ":" + milliSecond);
-    //Add a given duration to the time. Here we are adding
-    //one year, one month and one second to the current time.
+    //Add a given duration to the time. Here we are adding one year,
+    //one month and one second to the current time.
     Time tmAdd = time.addDuration(1, 1, 0, 0, 0, 1, 0);
     println("After add duration: " + tmAdd.toString());
     //Subtract a given duration from the time. Here we are subtracting
